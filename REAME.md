@@ -13,7 +13,7 @@ Tudo isso **sem frontend customizado**, usando apenas ferramentas de mercado.
 
 ## 🧱 Diagrama de Arquitetura
 
-A![diagrama](image-1.png)
+![diagrama](image-1.png)
 
 
 🚀 Stack Utilizada
