@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_USER: metabase
+      POSTGRES_PASSWORD: metabase
+      POSTGRES_DB: finance
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - "5432:5432"
+
+  ingest:
+    build: ./ingest
+    depends_on:
+      - postgres
+    restart: "no"
+
+  metabase:
+    image: metabase/metabase:latest
+    container_name: metabase
+    depends_on:
+      - postgres
+    ports:
+      - "3000:3000"
