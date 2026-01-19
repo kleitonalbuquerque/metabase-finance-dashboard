@@ -36,7 +36,6 @@ Tudo isso **sem frontend customizado**, usando apenas ferramentas de mercado.
 
 # Estrutura
 
-metabase-finance-dashboard/
 ![estrutura-do-projeto](image.png)
 
 ▶️ Como Rodar o Projeto
