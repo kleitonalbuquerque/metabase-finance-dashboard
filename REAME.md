@@ -13,42 +13,8 @@ Tudo isso **sem frontend customizado**, usando apenas ferramentas de mercado.
 
 ## 🧱 Diagrama de Arquitetura
 
-┌───────────────────────────┐
-│      API Pública          │
-│   Frankfurter (ECB)       │
-│  Câmbio USD → BRL / EUR   │
-└─────────────┬─────────────┘
-              │
-              │ HTTP (JSON)
-              ▼
-┌───────────────────────────┐
-│   Ingestão (Node.js)      │
-│                           │
-│ - Axios (HTTP client)     │
-│ - Retry / Backoff         │
-│ - Validação da API        │
-│ - Insert idempotente      │
-└─────────────┬─────────────┘
-              │
-              │ SQL
-              ▼
-┌───────────────────────────┐
-│     PostgreSQL 15         │
-│                           │
-│ - Histórico diário        │
-│ - exchange_rates          │
-│ - Chave primária composta │
-└─────────────┬─────────────┘
-              │
-              │ JDBC
-              ▼
-┌───────────────────────────┐
-│        Metabase           │
-│                           │
-│ - Perguntas salvas        │
-│ - Dashboards              │
-│ - Filtros interativos     │
-└─────────────┬─────────────┘
+A![diagrama](image-1.png)
+
 
 🚀 Stack Utilizada
 ## Ingestão / Backend
@@ -71,18 +37,7 @@ Tudo isso **sem frontend customizado**, usando apenas ferramentas de mercado.
 # Estrutura
 
 metabase-finance-dashboard/
-│
-├── docker-compose.yml
-│
-├── ingest/
-│   ├── Dockerfile
-│   ├── package.json
-│   └── index.js
-│
-├── sql/
-│   └── init.sql
-│
-└── README.md
+![estrutura-do-projeto](image.png)
 
 ▶️ Como Rodar o Projeto
 
